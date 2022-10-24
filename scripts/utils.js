@@ -37,4 +37,33 @@ export function strokeCircle(x, y, radius){
  */
 export function rgb(r, g, b){
     let rgb = "rgb(" + r + "," + g + "," + b + ")";
+    return rgb;
+}
+
+/**
+ * Draws a filled circle 
+ * @param {*} x coordinate middle x
+ * @param {*} y coordinate middle y
+ * @param {*} radius radius of the circle
+ */
+ export function fillAndStrokeCircle(x, y, radius){
+    context.beginPath();
+    context.ellipse(x, y, radius, radius, 0, 0, Math.PI*2);
+    context.stroke();
+    context.fill();
+}
+
+
+/**
+ * Draws a filled circle
+ * @param {*} x coordinate middle x
+ * @param {*} y coordinate middle y
+ * @param {*} rX X radius
+ * @param {*} rY Y radius
+ */
+ export function fillAndStrokeEllipse(x, y, rX, rY){
+    context.beginPath();
+    context.ellipse(x, y, rX, rY, 0, 0, Math.PI*2);
+    context.stroke();
+    context.fill();
 }
