@@ -6,6 +6,8 @@ let width = context.canvas.width;
 let height = context.canvas.height;
 let value = 10;
 
+context.fillRect(0, 0, width, height);
+
 drawMaze();
 function drawMaze(){
     for(let j = 0; j < width/10; j++){
@@ -17,6 +19,11 @@ function drawMaze(){
             let stepj = 10*j;
 
             context.lineWidth = "5";
+            let r = Math.random()*255;
+            let g = Math.random()*255;
+            let b = Math.random()*255;
+            let color = "rgb(" + r + "," + g + "," + b + ")";
+            context.strokeStyle = color;
 
             if(way == 0){
                 Utils.drawLine(0 + stepj, 0 + stepi, 10 + stepj, 10 + stepi);
